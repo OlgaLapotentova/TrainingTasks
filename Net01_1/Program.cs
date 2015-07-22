@@ -14,7 +14,7 @@ namespace Net01_1
             {
                 VideoUri = new Uri(@"http://someVideoUri"),
                 HeadBandUri = new Uri(@"http://someheadBand"),
-                VideoFormat = VideoFormat.ASF,
+                VideoFormat = VideoFormat.Asf,
                 Description = "Material fo first lesson about .Net: video material"
             };
 
@@ -25,16 +25,14 @@ namespace Net01_1
             var text = new TextMaterial
             {
                 Description = "Mterial about string: Text material",
-                Text =
-                    new StringBuilder(
-                        "In C#, you can use strings as array of characters, However, more common practice is to use the string keyword to declare a string variable. The string keyword is an alias for the System.String class."),
+                Text ="In C#, you can use strings as array of characters, However, more common practice is to use the string keyword to declare a string variable. The string keyword is an alias for the System.String class.",
                 Id = Guid.NewGuid()
             };
 
             text.CreateEntityGuid();
 
 
-            ReferenceMaterial reference = new ReferenceMaterial
+            var reference = new ReferenceMaterial
             {
                 ContentUri = new Uri(@"http://someContent"),
                 ContentType = TypeOfReferenceMaterial.Picture,
@@ -48,9 +46,6 @@ namespace Net01_1
             {
                 Console.WriteLine("Equal material");
             }
-
-
-
             TrainigLesson lessons = new TrainigLesson(2)
             {
                 Version = new byte[] {0, 1, 2, 3, 4, 5, 6, 7},

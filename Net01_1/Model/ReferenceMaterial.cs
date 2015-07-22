@@ -4,14 +4,12 @@ namespace Net01_1.Model
 {
     class ReferenceMaterial:BaseTrainingMaterial, ICloneable
     {
-
         public Uri ContentUri { get; set; }
         public TypeOfReferenceMaterial ContentType { get; set; }
 
         public override string ToString()
         {
             return Description;
-
         }
 
         public object Clone()

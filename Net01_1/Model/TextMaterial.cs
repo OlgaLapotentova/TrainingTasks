@@ -1,17 +1,25 @@
 ﻿using System;
-using System.Text;
 
 namespace Net01_1.Model
 {
     class TextMaterial:BaseTrainingMaterial, ICloneable
     {
-        public StringBuilder Text { get; set; }
-
-        public TextMaterial()
+        public string Text
         {
-            Text = new StringBuilder(10000);
+            get { return _text; }
+            set
+            {
+                if (value != null && value.Length > 1000)
+                {
+                    throw new ArgumentException("Text should contain less then 1000 simbols");
+                }
+
+                _text = value;
+            }
         }
 
+        private string _text;
+      
         public override string ToString()
         {
             return Description;

@@ -6,6 +6,11 @@ namespace Net01_1.Model
 {
     public class TrainigLesson:BaseEntity, ICloneable, IVersionable
     {
+        public byte[] Version { get; set; }
+
+        private BaseTrainingMaterial[] _trainingMaterial;
+        private int _nextFreePosiction;
+        private readonly int _baseLength;
 
         public int CountOfMaterials
         {
@@ -22,9 +27,6 @@ namespace Net01_1.Model
                 return _trainingMaterial.OfType<VideoMaterial>().Any() ? KindOfLessons.VideoLesson : KindOfLessons.TextLessons;
             }
         }
-
-        public byte[] Version { get; set; }
-
 
         public TrainigLesson(int countOfmaterils = 1)
         {
@@ -60,7 +62,6 @@ namespace Net01_1.Model
             
             return material;
         }
-
 
         public BaseTrainingMaterial RemoveMaterialAt(int posistion)
         {
@@ -100,7 +101,6 @@ namespace Net01_1.Model
             return lessons;
         }
 
-
         private void ReduceTrainingMaterial()
         {
             _nextFreePosiction--;
@@ -112,11 +112,7 @@ namespace Net01_1.Model
             {
                 _trainingMaterial[_nextFreePosiction] = null;
             }
-        }
-
-        private BaseTrainingMaterial[] _trainingMaterial;
-        private int _nextFreePosiction;
-        private readonly int _baseLength;
+        }   
     }
 
 }

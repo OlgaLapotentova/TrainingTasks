@@ -3,6 +3,5 @@
     public abstract class BaseTrainingMaterial:BaseEntity
     {
      
-
     }
 }

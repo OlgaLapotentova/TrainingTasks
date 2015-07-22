@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Net01_1.Model
 {
@@ -7,12 +6,17 @@ namespace Net01_1.Model
     {
         public Guid Id { get;  set; }
 
+        private string _description;
+
         public string Description {
             get { return _description; }
             set
-            {
-                if (value.Length > 256)
-                    throw new Exception("Description should contain less then 256 simbols");
+            { 
+                if (value != null &&  value.Length > 256)
+                {
+                    throw new ArgumentException("Description should contain less then 256 simbols");
+                }
+
                 _description = value;
             }
         }
@@ -34,6 +38,6 @@ namespace Net01_1.Model
             return Id.GetHashCode();
         }
 
-        private string _description;
+      
     }
 }

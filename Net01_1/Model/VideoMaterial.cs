@@ -15,13 +15,10 @@ namespace Net01_1.Model
             Version = new byte[8];
         }
 
-
         public override string ToString()
         {
             return Description;
         }
-
-
 
         public object Clone()
         {
