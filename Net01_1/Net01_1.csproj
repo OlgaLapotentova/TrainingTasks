@@ -62,6 +62,7 @@
     <Compile Include="Model\BaseTrainingMaterial.cs" />
     <Compile Include="Model\KindOfLessons.cs" />
     <Compile Include="Model\ReferenceMaterial.cs" />
+    <Compile Include="Model\SomeNewClass.cs" />
     <Compile Include="Model\TextMaterial.cs" />
     <Compile Include="Model\TrainigLesson.cs" />
     <Compile Include="Model\TypeOfReferenceMaterial.cs" />
